@@ -27,6 +27,7 @@ class DatabaseSeeder extends Seeder
             'original_text' => 'i think teh weather is nice today. its really good for going out.',
             'corrected_text' => 'I think the weather is nice today. It\'s really good for going out.',
             'suggestions' => 'Saran perbaikan: Selalu gunakan huruf kapital "I" dalam bahasa Inggris. Perhatikan ejaan kata-kata yang sering salah. Bedakan penggunaan its/it\'s.',
+            'score' => 70,
         ]);
 
         GrammarCheck::factory()->create([
@@ -35,6 +36,7 @@ class DatabaseSeeder extends Seeder
             'original_text' => 'The students was studying in the library when there teacher arrived.',
             'corrected_text' => 'The students were studying in the library when their teacher arrived.',
             'suggestions' => 'Saran perbaikan: Perhatikan kesepakatan subjek-verba (students were, bukan students was). Bedakan penggunaan their/there/they\'re.',
+            'score' => 75,
         ]);
 
         GrammarCheck::factory()->create([
@@ -43,6 +45,7 @@ class DatabaseSeeder extends Seeder
             'original_text' => 'Your writing is excellent and demonstrates a clear understanding of the topic.',
             'corrected_text' => 'Your writing is excellent and demonstrates a clear understanding of the topic.',
             'suggestions' => 'Teks Anda sudah cukup baik! Struktur kalimat dan tata bahasa terlihat benar. Pertahankan gaya penulisan yang jelas dan natural seperti ini.',
+            'score' => 100,
         ]);
 
         // Create more sample data

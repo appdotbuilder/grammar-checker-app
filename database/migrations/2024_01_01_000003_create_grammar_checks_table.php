@@ -18,6 +18,7 @@ return new class extends Migration
             $table->longText('original_text');
             $table->longText('corrected_text');
             $table->longText('suggestions');
+            $table->integer('score')->default(100)->comment('Grammar score out of 100');
             $table->timestamps();
             
             // Indexes for performance

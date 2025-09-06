@@ -35,6 +35,7 @@ class GrammarCheckController extends Controller
             'original_text' => $result['original_text'],
             'corrected_text' => $result['corrected_text'],
             'suggestions' => $result['suggestions'],
+            'score' => $result['score'],
         ]);
 
         return Inertia::render('welcome', [
@@ -42,6 +43,7 @@ class GrammarCheckController extends Controller
                 'original_text' => $result['original_text'],
                 'corrected_text' => $result['corrected_text'],
                 'suggestions' => $result['suggestions'],
+                'score' => $result['score'],
                 'name' => $validatedData['name'],
                 'school' => $validatedData['school'],
             ]

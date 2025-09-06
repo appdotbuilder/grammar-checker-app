@@ -12,6 +12,7 @@ interface GrammarCheck {
     original_text: string;
     corrected_text: string;
     suggestions: string;
+    score: number;
     created_at: string;
 }
 
@@ -94,6 +95,12 @@ export default function GrammarHistory({ grammarChecks }: HistoryProps) {
                                             <div className="flex items-center gap-3">
                                                 <Badge variant="secondary" className="text-xs">
                                                     #{check.id}
+                                                </Badge>
+                                                <Badge 
+                                                    variant={check.score >= 90 ? "default" : check.score >= 80 ? "secondary" : "outline"}
+                                                    className="text-xs"
+                                                >
+                                                    {check.score >= 90 ? '🏆' : check.score >= 80 ? '🌟' : check.score >= 70 ? '👍' : check.score >= 60 ? '👌' : '📚'} {check.score}/100
                                                 </Badge>
                                                 <div className="flex items-center gap-2 text-sm text-gray-600 dark:text-gray-400">
                                                     <User className="w-4 h-4" />

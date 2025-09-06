@@ -12,6 +12,7 @@ interface GrammarResult {
     original_text: string;
     corrected_text: string;
     suggestions: string;
+    score: number;
     name: string;
     school: string;
 }
@@ -249,8 +250,25 @@ export default function Welcome({ result }: WelcomeProps) {
                                 <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-2">
                                     ✅ Hasil Pemeriksaan Grammar
                                 </h2>
-                                <p className="text-gray-600 dark:text-gray-300">
+                                <p className="text-gray-600 dark:text-gray-300 mb-4">
                                     Hasil untuk {result.name} dari {result.school}
+                                </p>
+                                
+                                {/* Score Display */}
+                                <div className="inline-flex items-center gap-3 bg-gradient-to-r from-blue-50 to-indigo-50 dark:from-blue-900/30 dark:to-indigo-900/30 px-6 py-3 rounded-xl border border-blue-200 dark:border-blue-700">
+                                    <div className="text-2xl">
+                                        {result.score >= 90 ? '🏆' : result.score >= 80 ? '🌟' : result.score >= 70 ? '👍' : result.score >= 60 ? '👌' : '📚'}
+                                    </div>
+                                    <div className="text-left">
+                                        <p className="text-sm text-gray-600 dark:text-gray-400">Skor Anda:</p>
+                                        <p className="text-2xl font-bold text-blue-600 dark:text-blue-400">
+                                            {result.score}/100
+                                        </p>
+                                    </div>
+                                </div>
+                                
+                                <p className="text-sm text-green-600 dark:text-green-400 mt-2">
+                                    ✅ Hasil telah disimpan ke riwayat
                                 </p>
                             </div>
 

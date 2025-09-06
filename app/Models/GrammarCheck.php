@@ -14,6 +14,7 @@ use Illuminate\Database\Eloquent\Model;
  * @property string $original_text
  * @property string $corrected_text
  * @property string $suggestions
+ * @property int $score
  * @property \Illuminate\Support\Carbon|null $created_at
  * @property \Illuminate\Support\Carbon|null $updated_at
  * 
@@ -25,6 +26,7 @@ use Illuminate\Database\Eloquent\Model;
  * @method static \Illuminate\Database\Eloquent\Builder|GrammarCheck whereOriginalText($value)
  * @method static \Illuminate\Database\Eloquent\Builder|GrammarCheck whereCorrectedText($value)
  * @method static \Illuminate\Database\Eloquent\Builder|GrammarCheck whereSuggestions($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|GrammarCheck whereScore($value)
  * @method static \Illuminate\Database\Eloquent\Builder|GrammarCheck whereCreatedAt($value)
  * @method static \Illuminate\Database\Eloquent\Builder|GrammarCheck whereUpdatedAt($value)
  * @method static \Illuminate\Database\Eloquent\Builder|GrammarCheck whereId($value)
@@ -47,6 +49,7 @@ class GrammarCheck extends Model
         'original_text',
         'corrected_text',
         'suggestions',
+        'score',
     ];
 
     /**
